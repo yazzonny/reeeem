@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070d1b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>Ali &amp; Reem — Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to celebrate the wedding of Ali & Reem. Wednesday, October 7, 2026 at the Royal Hotel, Amman.">
+  
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23dfc282%22>💍</text></svg>">
+  
+  <!-- Google Fonts for Ultra-Luxury Wedding Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading-state">
+
+  <!-- Ambient Golden Dust Particle Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================
+       1. OPENING ANIMATION: LUXURY ENVELOPE & SEAL REVEAL
+       ======================================================== -->
+  <aside id="envelope-overlay" class="envelope-modal-overlay active" aria-label="Wedding Invitation Envelope">
+    <div class="stars-backdrop" aria-hidden="true"></div>
+
+    <div class="envelope-experience-wrapper">
+      
+      <!-- Subtle top hint -->
+      <div class="envelope-top-badge">
+        <span class="monogram-pill">A &amp; R</span>
+        <p class="envelope-lead-caption">A Celebration of Love</p>
+      </div>
+
+      <!-- The 3D Scalable Envelope Container -->
+      <div id="envelope-container" class="envelope-3d-box" role="button" tabindex="0" aria-label="Open wedding invitation envelope">
+        
+        <!-- Envelope Shadow -->
+        <div class="envelope-ground-shadow"></div>
+
+        <!-- Envelope Body Structure -->
+        <div class="envelope-chassis">
+          
+          <!-- Back Interior Lining (champagne silk / subtle pattern) -->
+          <div class="envelope-interior-lining">
+            <div class="lining-gold-pattern"></div>
+          </div>
+
+          <!-- The Invitation Card that pulls out -->
+          <div id="pull-card" class="envelope-inner-card">
+            <div class="inner-card-border">
+              <div class="inner-card-corner tl"></div>
+              <div class="inner-card-corner tr"></div>
+              <div class="inner-card-corner bl"></div>
+              <div class="inner-card-corner br"></div>
+
+              <div class="inner-card-content">
+                <span class="inner-card-sub">Together With Their Families</span>
+                <h2 class="inner-card-names">Ali &amp; Reem</h2>
+                <div class="inner-card-divider">
+                  <span class="gold-line"></span>
+                  <span class="gold-gem">❖</span>
+                  <span class="gold-line"></span>
+                </div>
+                <p class="inner-card-date">Wednesday, October 7, 2026</p>
+                <p class="inner-card-venue">Royal Hotel &bull; Amman</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Envelope Pocket Front & Sides (Scalable Triangular Folds) -->
+          <div class="envelope-pocket-left"></div>
+          <div class="envelope-pocket-right"></div>
+          <div class="envelope-pocket-bottom">
+            <div class="pocket-fold-line"></div>
+          </div>
+
+          <!-- Envelope Top Flap (Opens Upward in 3D) -->
+          <div id="envelope-flap" class="envelope-top-flap">
+            <div class="flap-triangle"></div>
+          </div>
+
+          <!-- Golden Wax Seal / Monogram Medallion (Sits over flap closure) -->
+          <div id="wax-seal" class="wax-seal-ornament" title="Tap to open invitation">
+            <div class="seal-glow-pulse"></div>
+            <div class="seal-outer-rim">
+              <div class="seal-inner-dish">
+                <div class="seal-laurel-wreath"></div>
+                <div class="seal-monogram">A &amp; R</div>
+                <div class="seal-date-tiny">2026</div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- /envelope-chassis -->
+
+      </div> <!-- /envelope-3d-box -->
+
+      <!-- Interactive Prompt Beneath Envelope -->
+      <div id="envelope-prompt" class="envelope-tap-prompt">
+        <span class="tap-icon-touch">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </span>
+        <span class="tap-instruction-text">Tap to Open Invitation</span>
+      </div>
+
+    </div> <!-- /envelope-experience-wrapper -->
+  </aside>
+
+
+  <!-- ========================================================
+       2. MAIN WEBSITE INVITATION CONTENT
+       ======================================================== -->
+  <div id="main-website" class="main-page-wrapper">
+    
+    <!-- Top Floating Navigation / Luxury Bar -->
+    <header class="luxury-top-nav">
+      <div class="nav-container">
+        <a href="#hero" class="nav-brand">
+          <span class="brand-monogram">A &bull; R</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-links">
+          <a href="#hero">Invitation</a>
+          <a href="#photos">Our Photos</a>
+          <a href="#details">Date &amp; Venue</a>
+          <a href="#countdown">Countdown</a>
+          <a href="#rsvp">RSVP</a>
+        </nav>
+
+        <!-- Right Side Nav Actions (Music + Envelope) -->
+        <div class="nav-actions">
+          <button id="sound-toggle-btn" class="nav-action-btn sound-btn" aria-label="Toggle ambient wedding melody" title="Toggle melody">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+            <svg class="sound-icon-off" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+            <span class="btn-text">Music</span>
+          </button>
+
+          <button id="reopen-envelope-btn" class="nav-action-btn envelope-btn" title="Replay Envelope Opening">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span class="btn-text">Envelope</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / MAIN INVITATION HEADER -->
+      <section id="hero" class="hero-section">
+        <!-- Delicate Islamic/Arabesque Background Geometry Watermark -->
+        <div class="arabesque-watermark" aria-hidden="true"></div>
+
+        <div class="section-container">
+          <div class="hero-content-card reveal-on-scroll">
+            
+            <!-- Delicate Gold Corner Accents -->
+            <div class="gold-corner-frame top-left"></div>
+            <div class="gold-corner-frame top-right"></div>
+            <div class="gold-corner-frame bottom-left"></div>
+            <div class="gold-corner-frame bottom-right"></div>
+
+            <!-- Arabic Blessing / Calligraphic Ornament -->
+            <div class="arabic-header-calligraphy">
+              <span class="arabic-script">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            </div>
+
+            <p class="invitation-pretitle">Together With Their Families</p>
+            
+            <!-- Interlocking Wedding Rings Thin Gold Linework -->
+            <div class="wedding-rings-wrapper">
+              <svg class="wedding-rings-svg" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="softGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#dfc282"/>
+                    <stop offset="50%" stop-color="#f8e7ba"/>
+                    <stop offset="100%" stop-color="#b8934d"/>
+                  </linearGradient>
+                  <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                  </filter>
+                </defs>
+                <!-- Left Ring -->
+                <ellipse cx="62" cy="48" rx="34" ry="34" stroke="url(#softGoldGrad)" stroke-width="2.2" filter="url(#softGlow)" />
+                <ellipse cx="62" cy="48" rx="30" ry="30" stroke="url(#softGoldGrad)" stroke-width="0.8" opacity="0.6"/>
+                
+                <!-- Diamond Mount on Left Ring -->
+                <path d="M62 10 L66 14 L62 17 L58 14 Z" fill="url(#softGoldGrad)"/>
+                <circle cx="62" cy="14" r="1.8" fill="#ffffff" opacity="0.9"/>
+
+                <!-- Right Ring (Interlocking) -->
+                <ellipse cx="98" cy="48" rx="34" ry="34" stroke="url(#softGoldGrad)" stroke-width="2.2" filter="url(#softGlow)"/>
+                <ellipse cx="98" cy="48" rx="30" ry="30" stroke="url(#softGoldGrad)" stroke-width="0.8" opacity="0.6"/>
+
+                <!-- Subtle Sparkle -->
+                <path d="M62 7 L63.5 12 L68.5 13.5 L63.5 15 L62 20 L60.5 15 L55.5 13.5 L60.5 12 Z" fill="#fff" opacity="0.85"/>
+              </svg>
+            </div>
+
+            <!-- Main Couple Names -->
+            <div class="names-block">
+              <h1 class="couple-names">Ali <span class="ampersand">&amp;</span> Reem</h1>
+            </div>
+
+            <!-- Elegant Gold Divider with Botanical/Floral Flourish -->
+            <div class="flourish-divider">
+              <svg viewBox="0 0 300 24" class="divider-svg" preserveAspectRatio="xMidYMid meet">
+                <path d="M0,12 L105,12" stroke="url(#softGoldGrad)" stroke-width="1" opacity="0.6"/>
+                <!-- Center Floral Leaves & Diamond -->
+                <path d="M110,12 C120,6 125,18 135,12 C140,8 145,16 150,12" stroke="url(#softGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M190,12 C180,6 175,18 165,12 C160,8 155,16 150,12" stroke="url(#softGoldGrad)" stroke-width="1.2" fill="none"/>
+                <polygon points="150,7 154,12 150,17 146,12" fill="url(#softGoldGrad)"/>
+                <circle cx="138" cy="12" r="1.5" fill="url(#softGoldGrad)"/>
+                <circle cx="162" cy="12" r="1.5" fill="url(#softGoldGrad)"/>
+                <path d="M195,12 L300,12" stroke="url(#softGoldGrad)" stroke-width="1" opacity="0.6"/>
+              </svg>
+            </div>
+
+            <p class="invitation-callout">Request the honor of your presence to celebrate their wedding</p>
+            
+            <div class="hero-quick-details">
+              <div class="quick-item">
+                <span class="quick-icon">✦</span>
+                <span class="quick-text">Wednesday, October 7, 2026</span>
+              </div>
+              <span class="quick-dot">&bull;</span>
+              <div class="quick-item">
+                <span class="quick-icon">✦</span>
+                <span class="quick-text">Royal Hotel &bull; Amman</span>
+              </div>
+            </div>
+
+            <div class="hero-cta-row">
+              <a href="#details" class="gold-outline-btn">Wedding Details</a>
+              <a href="#rsvp" class="gold-solid-btn">RSVP With Pleasure</a>
+            </div>
+
+          </div> <!-- /hero-content-card -->
+        </div>
+      </section>
+
+      <!-- SECTION: OUR PHOTOS GALLERY -->
+      <section id="photos" class="photos-section">
+        <div class="section-container">
+          
+          <!-- Section Header -->
+          <div class="section-header reveal-on-scroll">
+            <span class="section-badge">Moments of Forever</span>
+            <h2 class="section-title">Our Story in Frames</h2>
+            <div class="gold-rule-ornament">
+              <span class="rule-line"></span>
+              <span class="rule-gem">❖</span>
+              <span class="rule-line"></span>
+            </div>
+            <p class="section-subtitle">A glimpse into the promise, the journey, and the forever we begin together.</p>
+          </div>
+
+          <!-- Interactive Luxury Photo Gallery / Carousel -->
+          <div class="photo-showcase-wrapper reveal-on-scroll">
+            
+            <!-- Main Featured Carousel -->
+            <div class="carousel-container" id="wedding-carousel">
+              <div class="carousel-track" id="carousel-track">
+                
+                <!-- Slide 1 -->
+                <div class="carousel-slide active" data-index="0">
+                  <div class="photo-frame-container" onclick="openLightbox(0)">
+                    <div class="photo-frame-inner">
+                      <div class="gold-corner-filigree top-left"></div>
+                      <div class="gold-corner-filigree top-right"></div>
+                      <div class="gold-corner-filigree bottom-left"></div>
+                      <div class="gold-corner-filigree bottom-right"></div>
+                      <img src="assets/ring-ceremony.jpg" alt="Ali placing the ring on Reem's finger" class="wedding-photo" loading="lazy">
+                      <div class="photo-overlay-shade">
+                        <span class="overlay-zoom-icon">
+                          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <p class="photo-caption-title">The Sacred Ring</p>
+                        <p class="photo-caption-desc">"With this ring, I give you my heart and forever."</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide" data-index="1">
+                  <div class="photo-frame-container" onclick="openLightbox(1)">
+                    <div class="photo-frame-inner">
+                      <div class="gold-corner-filigree top-left"></div>
+                      <div class="gold-corner-filigree top-right"></div>
+                      <div class="gold-corner-filigree bottom-left"></div>
+                      <div class="gold-corner-filigree bottom-right"></div>
+                      <img src="assets/holding-hands.jpg" alt="Ali and Reem holding hands, intertwined fingers with rings" class="wedding-photo" loading="lazy">
+                      <div class="photo-overlay-shade">
+                        <span class="overlay-zoom-icon">
+                          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <p class="photo-caption-title">Hand in Hand</p>
+                        <p class="photo-caption-desc">"Two souls entwined, walking into tomorrow together."</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide" data-index="2">
+                  <div class="photo-frame-container" onclick="openLightbox(2)">
+                    <div class="photo-frame-inner">
+                      <div class="gold-corner-filigree top-left"></div>
+                      <div class="gold-corner-filigree top-right"></div>
+                      <div class="gold-corner-filigree bottom-left"></div>
+                      <div class="gold-corner-filigree bottom-right"></div>
+                      <img src="assets/together.jpg" alt="Holding hands over heart and suit" class="wedding-photo" loading="lazy">
+                      <div class="photo-overlay-shade">
+                        <span class="overlay-zoom-icon">
+                          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <p class="photo-caption-title">Near to the Heart</p>
+                        <p class="photo-caption-desc">"Every beat carries your name."</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- /carousel-track -->
+
+              <!-- Carousel Nav Controls -->
+              <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous photo">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="carousel-arrow next" id="carousel-next" aria-label="Next photo">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div> <!-- /carousel-container -->
+
+            <!-- Carousel Pagination Dots -->
+            <div class="carousel-dots" id="carousel-dots">
+              <button class="dot-btn active" data-index="0" aria-label="Slide 1"></button>
+              <button class="dot-btn" data-index="1" aria-label="Slide 2"></button>
+              <button class="dot-btn" data-index="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Triptych Thumbnail Gallery (Click to jump to photo) -->
+            <div class="gallery-triptych-preview">
+              <div class="thumb-card active" onclick="goToSlide(0)">
+                <img src="assets/ring-ceremony.jpg" alt="Ceremony thumbnail">
+                <span class="thumb-tag">I. The Ring</span>
+              </div>
+              <div class="thumb-card" onclick="goToSlide(1)">
+                <img src="assets/holding-hands.jpg" alt="Holding hands thumbnail">
+                <span class="thumb-tag">II. Hand in Hand</span>
+              </div>
+              <div class="thumb-card" onclick="goToSlide(2)">
+                <img src="assets/together.jpg" alt="Together thumbnail">
+                <span class="thumb-tag">III. Near Heart</span>
+              </div>
+            </div>
+
+          </div> <!-- /photo-showcase-wrapper -->
+        </div>
+      </section>
+
+      <!-- SECTION: WEDDING DETAILS (DATE, VENUE & COUNTDOWN) -->
+      <section id="details" class="details-section">
+        <div class="section-container">
+          
+          <div class="section-header reveal-on-scroll">
+            <span class="section-badge">The Celebration</span>
+            <h2 class="section-title">Date &amp; Venue Details</h2>
+            <div class="gold-rule-ornament">
+              <span class="rule-line"></span>
+              <span class="rule-gem">❖</span>
+              <span class="rule-line"></span>
+            </div>
+            <p class="section-subtitle">We would be honored to share this unforgettable evening in your warm company.</p>
+          </div>
+
+          <!-- Dual Cards: Date & Venue -->
+          <div class="details-cards-grid reveal-on-scroll">
+            
+            <!-- Card 1: Date & Time -->
+            <div class="detail-card">
+              <div class="card-inner-frame">
+                <div class="detail-card-icon">
+                  <!-- Elegant Calendar SVG in Gold -->
+                  <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                    <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+                  </svg>
+                </div>
+                <h3 class="detail-card-heading">The Date</h3>
+                <div class="detail-accent-date">Wednesday</div>
+                <div class="detail-primary-text">October 7, 2026</div>
+                <p class="detail-time-text">Reception &amp; Welcome: 6:30 PM<br>Celebration: 7:30 PM</p>
+                <div class="detail-card-divider">
+                  <span class="line"></span>
+                  <span class="star">✦</span>
+                  <span class="line"></span>
+                </div>
+                <!-- Add to Calendar Buttons -->
+                <div class="calendar-btn-group">
+                  <button id="google-cal-btn" class="detail-action-link" onclick="addToGoogleCalendar()">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                    </svg>
+                    <span>Google Calendar</span>
+                  </button>
+                  <button id="ics-cal-btn" class="detail-action-link" onclick="downloadICalFile()">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                    </svg>
+                    <span>iCal / Apple / Outlook</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Venue -->
+            <div class="detail-card">
+              <div class="card-inner-frame">
+                <div class="detail-card-icon">
+                  <!-- Elegant Location Pin SVG in Gold -->
+                  <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <h3 class="detail-card-heading">The Venue</h3>
+                <div class="detail-accent-date">Royal Hotel</div>
+                <div class="detail-primary-text">Amman, Jordan</div>
+                <p class="detail-time-text">Grand Ballroom<br>Zahran Street, 3rd Circle, Jabal Amman</p>
+                <div class="detail-card-divider">
+                  <span class="line"></span>
+                  <span class="star">✦</span>
+                  <span class="line"></span>
+                </div>
+                <!-- Directions & Map Link -->
+                <div class="calendar-btn-group">
+                  <a href="https://maps.google.com/?q=Le+Royal+Hotel+Amman+Jordan" target="_blank" rel="noopener noreferrer" class="detail-action-link">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Open in Google Maps</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- /details-cards-grid -->
+
+          <!-- COUNTDOWN TIMER SECTION -->
+          <div id="countdown" class="countdown-module reveal-on-scroll">
+            <div class="countdown-inner-box">
+              
+              <div class="countdown-header-line">
+                <span class="line"></span>
+                <span class="countdown-title-text">Counting Down to Our Forever</span>
+                <span class="line"></span>
+              </div>
+
+              <div class="timer-digits-grid" id="timer-grid">
+                
+                <div class="timer-unit">
+                  <div class="timer-box">
+                    <span class="timer-value" id="count-days">--</span>
+                  </div>
+                  <span class="timer-label">Days</span>
+                </div>
+
+                <div class="timer-separator">:</div>
+
+                <div class="timer-unit">
+                  <div class="timer-box">
+                    <span class="timer-value" id="count-hours">--</span>
+                  </div>
+                  <span class="timer-label">Hours</span>
+                </div>
+
+                <div class="timer-separator">:</div>
+
+                <div class="timer-unit">
+                  <div class="timer-box">
+                    <span class="timer-value" id="count-minutes">--</span>
+                  </div>
+                  <span class="timer-label">Minutes</span>
+                </div>
+
+                <div class="timer-separator">:</div>
+
+                <div class="timer-unit">
+                  <div class="timer-box">
+                    <span class="timer-value" id="count-seconds">--</span>
+                  </div>
+                  <span class="timer-label">Seconds</span>
+                </div>
+
+              </div> <!-- /timer-digits-grid -->
+
+              <p class="countdown-footer-msg" id="countdown-status-text">Until we say "I do" in Amman</p>
+
+            </div>
+          </div> <!-- /countdown-module -->
+
+        </div>
+      </section>
+
+      <!-- SECTION: RSVP & WISHES -->
+      <section id="rsvp" class="rsvp-section">
+        <div class="section-container">
+          
+          <div class="section-header reveal-on-scroll">
+            <span class="section-badge">Warmest Presence</span>
+            <h2 class="section-title">Kindly RSVP</h2>
+            <div class="gold-rule-ornament">
+              <span class="rule-line"></span>
+              <span class="rule-gem">❖</span>
+              <span class="rule-line"></span>
+            </div>
+            <p class="section-subtitle">Please let us know if you can join us on our special day.</p>
+          </div>
+
+          <div class="rsvp-card-container reveal-on-scroll">
+            <div class="rsvp-card-inner">
+              <div class="gold-corner-filigree top-left"></div>
+              <div class="gold-corner-filigree top-right"></div>
+              <div class="gold-corner-filigree bottom-left"></div>
+              <div class="gold-corner-filigree bottom-right"></div>
+
+              <form id="rsvp-form" class="rsvp-luxury-form">
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guest-name">Full Name(s)</label>
+                    <input type="text" id="guest-name" name="guestName" placeholder="e.g. Mr. &amp; Mrs. Ahmad" autocomplete="name" required>
+                  </div>
+                </div>
+
+                <div class="form-row split-2">
+                  <div class="form-group">
+                    <label for="guest-attendance">Will you attend?</label>
+                    <select id="guest-attendance" name="attendance" required>
+                      <option value="attending">Accepts with pleasure</option>
+                      <option value="regret">Declines with regrets</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="guest-count">Number of Guests</label>
+                    <select id="guest-count" name="guestCount">
+                      <option value="1">1 Guest</option>
+                      <option value="2" selected>2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guest-message">Warm Wishes for Ali &amp; Reem</label>
+                    <textarea id="guest-message" name="message" rows="3" placeholder="Leave a sweet message or prayer for the happy couple..."></textarea>
+                  </div>
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="gold-solid-btn submit-btn" id="rsvp-submit-btn">
+                    <span>Send RSVP Confirmation</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Instant Response Message -->
+                <div id="rsvp-success-message" class="rsvp-alert-card hidden">
+                  <div class="alert-icon">✨</div>
+                  <h4 class="alert-title">Thank You Warmly!</h4>
+                  <p class="alert-body" id="rsvp-feedback-text">Your response has been lovingly received. We cannot wait to celebrate with you!</p>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LIGHTBOX MODAL FOR PHOTO EXPANSION (MOBILE OPTIMIZED) -->
+      <div id="photo-lightbox" class="lightbox-modal" aria-hidden="true" onclick="closeLightbox(event)">
+        <div class="lightbox-content-box">
+          <button class="lightbox-close-btn" onclick="closeLightboxDirect()" aria-label="Close photo preview">&times;</button>
+          
+          <div class="lightbox-frame">
+            <img id="lightbox-img" src="" alt="Full view wedding photo">
+          </div>
+          
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+          
+          <!-- Desktop & Mobile navigation controls -->
+          <button class="lightbox-nav-btn prev" onclick="navigateLightbox(-1, event)" aria-label="Previous photo">&lsaquo;</button>
+          <button class="lightbox-nav-btn next" onclick="navigateLightbox(1, event)" aria-label="Next photo">&rsaquo;</button>
+
+          <!-- Mobile Quick Action Bar -->
+          <div class="lightbox-mobile-controls">
+            <button class="lightbox-m-btn prev" onclick="navigateLightbox(-1, event)" aria-label="Previous photo">&larr; Prev</button>
+            <span class="lightbox-counter" id="lightbox-counter">1 / 3</span>
+            <button class="lightbox-m-btn next" onclick="navigateLightbox(1, event)" aria-label="Next photo">Next &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="luxury-footer">
+      <div class="section-container footer-content">
+        
+        <div class="footer-monogram">
+          <span class="monogram-letter">A</span>
+          <span class="monogram-amp">&amp;</span>
+          <span class="monogram-letter">R</span>
+        </div>
+
+        <p class="footer-quote">
+          "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."
+        </p>
+
+        <div class="footer-divider-mini">✦ &bull; ✦</div>
+
+        <p class="footer-date-venue">
+          Wednesday, October 7, 2026 &bull; Royal Hotel, Amman
+        </p>
+
+        <button class="footer-replay-link" onclick="replayEnvelope()">
+          &larr; Replay Invitation Envelope Experience
+        </button>
+
+        <p class="footer-copyright">&copy; 2026 Ali &amp; Reem. Crafted with love &amp; joy.</p>
+      </div>
+    </footer>
+
+  </div> <!-- /main-page-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
